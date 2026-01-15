@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Utility classes */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Card styles */
+.card {
+  @apply bg-pb-bg-card border border-pb-border rounded-xl;
+}
+
+.card-header {
+  @apply px-4 py-3 border-b border-pb-border bg-pb-bg/50;
+}
+
+.card-body {
+  @apply p-4;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium text-sm transition-all duration-150;
+}
+
+.btn-primary {
+  @apply bg-pb-green text-black hover:bg-pb-green-dark;
+}
+
+.btn-secondary {
+  @apply bg-pb-border text-pb-text-muted hover:bg-pb-border-light hover:text-white;
+}
+
+.btn-ghost {
+  @apply bg-transparent text-pb-text-muted hover:bg-pb-bg-elevated hover:text-white;
+}
+
+.btn-danger {
+  @apply bg-red-500/20 text-red-400 hover:bg-red-500/30;
+}
+
+/* Input styles */
+.input {
+  @apply w-full px-3 py-2 bg-pb-bg-card border border-pb-border rounded-lg text-white text-sm;
+  @apply focus:outline-none focus:border-pb-green;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold uppercase;
+}
+
+.badge-buy {
+  @apply bg-pb-green/20 text-pb-green;
+}
+
+.badge-sell {
+  @apply bg-pb-orange/20 text-pb-orange;
+}
+
+.badge-hold {
+  @apply bg-white/10 text-pb-text-muted;
+}
+
+/* Table styles */
+.table {
+  @apply w-full border-collapse;
+}
+
+.table th {
+  @apply px-3 py-2 text-left text-xs font-medium text-pb-text-dim uppercase tracking-wider;
+}
+
+.table td {
+  @apply px-3 py-2 border-b border-pb-border/50;
+}
+
+.table tbody tr:hover {
+  @apply bg-pb-bg-hover;
+}
+
+/* Return heatmap cell styles */
+.return-cell {
+  @apply text-center rounded px-2 py-1 text-xs font-mono;
+}
+
+.return-high-pos { @apply bg-pb-green text-black; }
+.return-med-pos { @apply bg-pb-green/50 text-white; }
+.return-low-pos { @apply bg-pb-green/20 text-white; }
+.return-low-neg { @apply bg-pb-orange/20 text-white; }
+.return-med-neg { @apply bg-pb-orange/50 text-white; }
+.return-high-neg { @apply bg-pb-orange text-black; }
+
+/* Stat box */
+.stat-box {
+  @apply bg-pb-bg rounded-lg p-4;
+}
+
+.stat-label {
+  @apply text-xs text-pb-text-dim mb-1;
+}
+
+.stat-value {
+  @apply text-xl font-semibold font-mono;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* Portfolio tab styles */
+.portfolio-tab {
+  @apply px-4 py-2 rounded-lg font-semibold text-sm border-2 transition-all;
+}
+
+.portfolio-tab.hrgp {
+  @apply border-transparent;
+}
+
+.portfolio-tab.hrgp.active {
+  @apply bg-pb-green/15 border-pb-green text-pb-green;
+}
+
+.portfolio-tab.sfgp {
+  @apply border-transparent;
+}
+
+.portfolio-tab.sfgp.active {
+  @apply bg-pb-orange/15 border-pb-orange text-pb-orange;
+}
+
+.portfolio-tab:not(.active) {
+  @apply text-pb-text-dim border-pb-border hover:border-pb-border-light;
+}
