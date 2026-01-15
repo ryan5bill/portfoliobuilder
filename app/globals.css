@@ -111,8 +111,7 @@ body {
 }
 
 .table tbody tr:hover {
- ``css 
-  @apply bg-pb-bg-elevated; /* hover effect */
+@apply bg-pb-bg-elevated; /* hover */
 }
 
 /* Return heatmap cell styles */
